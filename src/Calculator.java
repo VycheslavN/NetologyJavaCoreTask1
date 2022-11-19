@@ -17,5 +17,4 @@ public class Calculator {
 
     Consumer<Integer> println = System.out::println;
 
-
 }
