@@ -1,4 +1,3 @@
-# NetologyJavaCoreTask1
 # Задача 1: Калькулятор
 
 ## Описание
