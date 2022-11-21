@@ -9,7 +9,7 @@ public class Calculator {
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
     //BinaryOperator<Integer> division = (x, y) -> x / y; // деление на ноль недопустимо
     BinaryOperator<Integer> division = (x, y) -> {
-        if(y==0 || x == 0) {
+        if(y == 0 || x == 0) {
             return Integer.MAX_VALUE; // возврат невероятного числа
         } else
             return x / y;
