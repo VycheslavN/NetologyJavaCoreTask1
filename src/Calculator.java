@@ -7,19 +7,20 @@ public class Calculator {
     BinaryOperator<Integer> plus = (x, y) -> x + y;
     BinaryOperator<Integer> minus = (x, y) -> x - y;
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
-    //BinaryOperator<Integer> division = (x, y) -> x / y; // деление на ноль недопустимо
-    BinaryOperator<Integer> division = (x, y) -> {
-        if(y == 0 || x == 0) {
-            return Integer.MAX_VALUE; // возврат невероятного числа
-        } else
-            return x / y;
-    };
-
+    //BinaryOperator<Integer> devide = (x, y) -> x / y; // деление на ноль недопустимо
+    BinaryOperator<Integer> devide = (x, y) -> y != 0 ? x / y : 1; // реализация аналога деления
     UnaryOperator<Integer> pow = x -> x * x;
-    UnaryOperator<Integer> abs = x -> x > 0 ? x : x * (-1);
+
+    //UnaryOperator<Integer> abs1 = x -> x > 0 ? x : x * (-1); // если x > 0 вернем x иначе вернем x *(-1);
+
+    UnaryOperator<Integer> abs = (x) -> { // реализация многострочного блока кода с { return }
+        if (x > 0)
+            return x;
+        else
+            return x * (-1);
+    };
 
     Predicate<Integer> isPositive = x -> x > 0;
 
     Consumer<Integer> println = System.out::println;
-
 }
